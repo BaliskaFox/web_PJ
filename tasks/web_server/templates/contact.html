@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+<h2>Контакты</h2>
+
+{% if name and message %}
+    <h3>Спасибо за ваше сообщение, {{ name }}!</h3>
+    <p>Мы получили ваше сообщение:</p>
+    <blockquote>{{ message }}</blockquote>
+{% else %}
+    <form method="POST" action="/contact">
+        <label for="name">Ваше имя:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="message">Ваше сообщение:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+        <button type="submit">Отправить</button>
+    </form>
+{% endif %}
+
+{% endblock %}
