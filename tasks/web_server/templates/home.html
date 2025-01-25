@@ -1,8 +1,4 @@
-{% extends "base.html" %}
-
-{% block title %}Главная{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %}Главная{% endblock %} {% block content %}
 <h2>Добро пожаловать!</h2>
 <p>Это главная страница моего приложения.</p>
-{% endblock %}
+<img src="{{ url_for('static', filename='image.png') }}" alt="Пример изображения"> {% endblock %}
