@@ -1,40 +1,97 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f9fc;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #23da8be3;
+    background-color: #1f2937;
     color: white;
     padding: 1rem 0;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+header nav a {
+    color: #a3e635;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+}
+
+header nav a:hover {
+    color: #facc15;
+    text-decoration: underline;
 }
 
 .container {
-    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
 h1 {
-    color: #333;
+    color: aliceblue;
 }
 
-p {
-    line-height: 1.5;
+h2 {
+    color: #1f2937;
+}
+
+button {
+    background-color: #10b981;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #059669;
+}
+
+blockquote {
+    font-style: italic;
+    color: #4b5563;
+    padding: 0.5rem;
+    border-left: 4px solid #10b981;
+    margin: 1rem 0;
+    background-color: #ecfdf5;
+}
+
+footer {
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
 }
 
 img {
-    height: 200px;
-    width: 200px;
+    display: block;
+    max-width: 35%;
+    height: auto;
+    margin: 1rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    /* Высота области для центрирования */
+    text-align: center;
+    flex-direction: column;
+    /* Для вертикального расположения элементов */
 }

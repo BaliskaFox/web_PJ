@@ -1,22 +1,17 @@
-from flask import Flask, render_template, request
+from flask import Flask
+from models import get_db_connection
+from routes.students_routes import students_bp
+from routes.general_routes import general_bp
+from routes.authentication import authentication_br
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return render_template('home.html', title="Главная")
+app.secret_key = 'your_secret_key_here'  # Используется для подписи данных в сессии
 
-@app.route('/contact', methods=['GET', 'POST'])
-def contact():
-    if request.method == 'POST':
-        name = request.form.get('name')
-        message = request.form.get('message')
-        return render_template('contact.html', name=name, message=message)
-    return render_template('contact.html')
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
+# Регистрация блюпринтов (Blueprints)
+app.register_blueprint(students_bp)
+app.register_blueprint(general_bp)
+app.register_blueprint(authentication_br)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,use_reloader=True)
